@@ -1,2 +1,2 @@
 # drivers
-This repo contains driver layers of different microcontrollers
+This repo contains driver layer of different microcontrollers
