@@ -1,17 +1,16 @@
 /********************************************************************************************************************************************/
 /*                                              Author      : Islam Tarek                                                                   */
-/*                                              SW Module   : Driver file                                                                   */
+/*                                              SW Module   : Atmega32 include                                                              */
 /*                                              Last Update : 13/7/2022                                                                     */
 /********************************************************************************************************************************************/
-#ifndef DRIVER_H_
-#define DRIVER_H_
+#ifndef ATMEGA32_INCLUDE_H_
+#define ATMEGA32_INCLUDE_H_
 
-typedef enum
-{
-    DRIVER_FAIL = -1,
-    DRIVER_OK,
-    DRIVER_ERR_OUT_OF_RANGE,
-    DRIVER_ERR_NULL_PTR   
-}driver_err_t;
+#include <stdio.h>
+#include <stdint.h>
+#include "../driver.h"
+
+#include "core.h"
+
 
 #endif
