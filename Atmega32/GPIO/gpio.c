@@ -29,3 +29,22 @@ driver_err_t gpio_set_pin_output(gpio_t gpio_x, gpio_pin_t pin_x)
     return DRIVER_OK;
 }
 
+/**
+ * @brief This function is used to set pin or a collection of pin as input with floating
+ * @param gpio_x : Determine which port to be used 
+ * @param pin_x  : Determine which pin to be configured
+ * @return Thes state of API (DRIVER_OK if everything ok and status of Error if there is an error)
+ */
+driver_err_t gpio_set_pin_input(gpio_t gpio_x, gpio_pin_t pin_x)
+{
+    if(gpio_x >= GPIO_A && gpio_x < GPIO_MAX)
+    {
+        GPIO_ARR[gpio_x]->DDR  &= ~pin_x;
+        GPIO_ARR[gpio_x]->PORT &= ~pin_x;
+    }
+    else
+    {
+        return DRIVER_ERR_OUT_OF_RANGE;
+    }
+    return DRIVER_OK;
+}
